@@ -181,6 +181,7 @@ def _photo_image(res, name):
     img = bpy.data.images.new(f'{name}_foto', w, h, alpha=True)
     img.pixels.foreach_set(np.ascontiguousarray(flat[::-1]).astype(np.float32).ravel())
     img.pack()
+    img.alpha_mode = 'NONE'          # si no, lo transparente del PNG hace la pieza invisible
     return img
 
 
@@ -197,6 +198,10 @@ def _paint(part, img, res, center, mm_per_bu):
     u = (co[li, 0] + center[0]) / (w * s)
     v = (co[li, 1] + center[1]) / (h * s)
     uv.data.foreach_set('uv', np.column_stack([u, v]).astype(np.float32).ravel())
+    for other in [l for l in me.uv_layers if l.name != 'Foto']:   # la de la curva estira la foto
+        me.uv_layers.remove(other)
+    me.uv_layers['Foto'].active = True
+    me.uv_layers['Foto'].active_render = True
     mat = bpy.data.materials.new(f'{part.name}_foto')
     mat.use_nodes = True
     nt = mat.node_tree
