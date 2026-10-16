@@ -4,8 +4,8 @@ Complemento de Blender (4.2 a 5.x) que convierte **una foto en una pieza imprimi
 de una pieza plana con sus agujeros, a escala con una hoja A4 debajo (corrige la perspectiva) o con una
 medida conocida, y la extruye. Todo en modo Objeto.
 
-Instalar: Editar → Preferencias → Complementos → Instalar desde disco → `version_1.0.1/dist/photo_to_part-1.0.1.zip`.
-Vista 3D → **N** → pestaña **Photo to Part**. Guía: `version_1.0.1/photo_to_part/LEEME.md`.
+Instalar: Editar → Preferencias → Complementos → Instalar desde disco → `version_1.0.2/dist/photo_to_part-1.0.2.zip`.
+Vista 3D → **N** → pestaña **Photo to Part**. Guía: `version_1.0.2/photo_to_part/LEEME.md`.
 
 ## Licencia
 
